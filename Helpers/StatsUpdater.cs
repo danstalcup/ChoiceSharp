@@ -55,6 +55,11 @@ namespace ChoiceSharp.Helpers
             {
                 stat.ValueInt = fairmathCalculator.ApplyFairmath(stat.ValueInt, statChange.ResultIntFairmath.Value);
             }
+
+            if (statChange.ResultObject != null)
+            {
+                stat.Value = statChange.ResultObject;
+            }
         }
     }
 }
