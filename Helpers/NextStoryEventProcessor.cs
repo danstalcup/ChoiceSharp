@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ChoiceSharp.Core;
+using Exception = System.Exception;
 
 namespace ChoiceSharp.Helpers
 {
@@ -18,18 +19,23 @@ namespace ChoiceSharp.Helpers
 
         public StoryEvent GetNextStoryEvent(Response response, Story story)
         {
-            if (response.StoryEventType == StoryEventType.TextOnly ||
-                response.StoryEventType == StoryEventType.Input)
-            {
-                return lookup.FindEvent(story,response.StoryEvent.SimpleNextEventId);
-            }
-
             if (response.Choice.Type == ChoiceType.InfoOnly)
             {
                 return response.StoryEvent;
             }
 
-            return lookup.FindEvent(story, response.Choice.SimpleNextEventId);
+            if (response.Choice != null &&
+                !string.IsNullOrEmpty(response.Choice.NextEventId))
+            {
+                return lookup.FindEvent(story, response.Choice.NextEventId);
+            }
+
+            if(!string.IsNullOrEmpty(response.StoryEvent.NextEventId))
+            { 
+                return lookup.FindEvent(story, response.StoryEvent.NextEventId);
+            }
+
+            throw new Exception("Could not determine next event -- ID might be missing on event or choice");
         }
     }
 }
