@@ -16,9 +16,15 @@ namespace ChoiceSharp.Core
 
         public string Text { get; internal set; }
 
-        public string SimpleNextEventId { get; internal set; }
+        public string NextEventId { get; internal set; }
 
         public List<StatChange> StatChanges { get; internal set; } = new List<StatChange>();
+
+        public StatChange StatChange
+        {
+            get => StatChanges.SingleOrDefault();
+            set => StatChanges = new List<StatChange> {value};
+        }
 
         public override string ToString() => Text;
 
