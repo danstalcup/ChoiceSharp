@@ -19,13 +19,12 @@ namespace ChoiceSharp.Helpers
 
         public StoryEvent GetNextStoryEvent(Response response, Story story)
         {
-            if (response.Choice.Type == ChoiceType.InfoOnly)
+            if (response.Choice?.Type == ChoiceType.InfoOnly)
             {
                 return response.StoryEvent;
             }
 
-            if (response.Choice != null &&
-                !string.IsNullOrEmpty(response.Choice.NextEventId))
+            if (!string.IsNullOrEmpty(response.Choice?.NextEventId))
             {
                 return lookup.FindEvent(story, response.Choice.NextEventId);
             }
