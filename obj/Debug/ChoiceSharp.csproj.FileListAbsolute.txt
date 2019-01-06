@@ -1,0 +1,6 @@
+c:\users\dan\Source\Repos\ChoiceSharp\ChoiceSharp\obj\Debug\ChoiceSharp.csprojAssemblyReference.cache
+c:\users\dan\Source\Repos\ChoiceSharp\ChoiceSharp\obj\Debug\ChoiceSharp.csproj.CoreCompileInputs.cache
+c:\users\dan\Source\Repos\ChoiceSharp\ChoiceSharp\bin\Debug\ChoiceSharp.dll
+c:\users\dan\Source\Repos\ChoiceSharp\ChoiceSharp\bin\Debug\ChoiceSharp.pdb
+c:\users\dan\Source\Repos\ChoiceSharp\ChoiceSharp\obj\Debug\ChoiceSharp.dll
+c:\users\dan\Source\Repos\ChoiceSharp\ChoiceSharp\obj\Debug\ChoiceSharp.pdb
