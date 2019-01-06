@@ -19,5 +19,7 @@ namespace ChoiceSharp.Core
         public int? ResultIntFairmath { get; internal set; }
 
         public string ResultString { get; internal set; }
+
+        public object ResultObject { get; internal set; }
     }
 }
