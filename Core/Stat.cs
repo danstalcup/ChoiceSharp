@@ -12,17 +12,36 @@ namespace ChoiceSharp.Core
 
         public string Category { get; internal set; }
 
-        public int ValueInt { get; internal set; }
+        public object Value { get; internal set; }
 
-        public string ValueString { get; internal set; }
+        public T GetValue<T>()
+        {
+            try
+            {
+                return (T)Value;
+            }
+            catch (Exception)
+            {
+                return default(T);
+            }
+        }            
 
-        public bool ValueBool { get; internal set; }     
-        
-        public StatType Type { get; internal set; }
-    }
+        public int ValueInt
+        {
+            get => GetValue<int>();
+            internal set => Value = value;
+        }
 
-    public enum StatType
-    {
-        Int, String, Bool
+        public string ValueString
+        {
+            get => GetValue<string>();
+            internal set => Value = value;
+        }
+
+        public bool ValueBool
+        {
+            get => GetValue<bool>();
+            internal set => Value = value;
+        }
     }
 }
