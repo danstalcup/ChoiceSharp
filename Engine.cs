@@ -1,6 +1,7 @@
 ﻿using ChoiceSharp.Core;
 using ChoiceSharp.Helpers;
 using ChoiceSharp.HeroLegacy;
+using ChoiceSharp.HeroLegacy.Data;
 
 namespace ChoiceSharp
 {

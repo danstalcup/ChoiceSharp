@@ -14,13 +14,13 @@ namespace ChoiceSharp.Core
 
         public string DisplayText { get; internal set; }
 
-        public StoryEventType Type { get; internal set; } = StoryEventType.TextOnly;
+        public StoryEventType Type { get; internal set; } = StoryEventType.Choice;
 
         internal List<Choice> RawChoices { get; set; } = new List<Choice>();
 
         public List<Choice> Choices => RawChoices.Where(c => c.IsVisible).ToList();
 
-        public string SimpleNextEventId { get; internal set; }
+        public string NextEventId { get; internal set; }
 
         public string DefaultInput { get; internal set; } = string.Empty;
 

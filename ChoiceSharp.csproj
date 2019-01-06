@@ -61,8 +61,12 @@
     <Compile Include="Helpers\StoryEventUpdaterFromResponse.cs" />
     <Compile Include="Helpers\StoryStateUpdater.cs" />
     <Compile Include="Helpers\TextTransformer.cs" />
-    <Compile Include="HeroLegacy\HlData.cs" />
+    <Compile Include="HeroLegacy\Data\HlData_Intro.cs" />
+    <Compile Include="HeroLegacy\Data\HlData_Origin.cs" />
+    <Compile Include="HeroLegacy\StatEntities\Background.cs" />
+    <Compile Include="HeroLegacy\Data\HlData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatEntities\Gender.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
