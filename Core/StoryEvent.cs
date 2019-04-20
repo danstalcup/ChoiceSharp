@@ -24,11 +24,15 @@ namespace ChoiceSharp.Core
 
         public string DefaultInput { get; internal set; } = string.Empty;
 
+        public string InputTargetStat { get; internal set; }
+
         internal string RawButtonText { get; set; } = string.Empty;
 
         public string ButtonText { get; internal set; }
 
-        internal List<string> AppendText { get; set; } = new List<string>();
+        internal List<string> DisplayAppendText { get; set; } = new List<string>();
+
+        internal List<ReferenceEntry> RawReferenceEntries = new List<ReferenceEntry>();
     }
 
     public enum StoryEventType

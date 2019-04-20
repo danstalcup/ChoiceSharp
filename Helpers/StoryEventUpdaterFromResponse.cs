@@ -22,7 +22,7 @@ namespace ChoiceSharp.Helpers
             var choice = response.Choice;
             if (choice.Type == ChoiceType.InfoOnly)
             {
-                storyEvent.AppendText.Insert(0, choice.InfoAppendToEventRaw);
+                storyEvent.DisplayAppendText.Insert(0, choice.InfoAppendToEventRaw);
                 choice.IsVisible = false;
             }
         }

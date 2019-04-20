@@ -23,13 +23,14 @@ namespace ChoiceSharp.Helpers
         {
             storyEvent.DisplayText = string.Empty; 
 
-            foreach (var append in storyEvent.AppendText)
+            foreach (var append in storyEvent.DisplayAppendText)
             {                
                 storyEvent.DisplayText += textTransformer.TransformText(append, stats);
                 storyEvent.DisplayText += DisplayConstants.BreakBetweenInfoBlocks;
             }
 
             storyEvent.DisplayText += textTransformer.TransformText(storyEvent.RawText, stats);
+            storyEvent.DisplayText += new ReferenceEntryDescriptionProcessor().ProcessDescriptionFromReferenceEntries(storyEvent.RawReferenceEntries);
 
             storyEvent.ButtonText = textTransformer.TransformText(storyEvent.RawButtonText, stats);
 

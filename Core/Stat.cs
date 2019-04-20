@@ -10,6 +10,8 @@ namespace ChoiceSharp.Core
     {
         public string Name { get; set; }
 
+        public string DisplayName { get; set; }
+
         public string Category { get; internal set; }
 
         public object Value { get; internal set; }

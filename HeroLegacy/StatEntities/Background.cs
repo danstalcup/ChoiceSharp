@@ -2,7 +2,7 @@
 {    
     public enum BackgroundWealthEnum
     {
-        Impoverished, Humble, Noble
+        Poor, Humble, Noble
     }
 
     public enum BackgroundRegionEnum
@@ -12,6 +12,6 @@
 
     public enum BackgroundUnusualEnum
     {
-        Orphan, UnusualScar, DistantLands, RaisedByGoblins
+        Orphan, UnusualBirthmark, DistantLands, RaisedByGoblins, Gifted
     }
 }

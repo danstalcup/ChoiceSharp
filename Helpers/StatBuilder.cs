@@ -9,7 +9,7 @@ namespace ChoiceSharp.Helpers
 {
     public class StatBuilder
     {
-        public Stat BuildStat(string name, string category, object value = null) =>
-            new Stat { Name = name, Category = category, Value = value };
+        public Stat BuildStat(string name, string category, string displayName, object value = null) =>
+            new Stat { Name = name, Category = category, DisplayName = displayName, Value = value ?? string.Empty };
     }
 }

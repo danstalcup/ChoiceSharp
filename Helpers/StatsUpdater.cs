@@ -24,9 +24,14 @@ namespace ChoiceSharp.Helpers
             }
             foreach (var statChange in response.Choice.StatChanges)
             {
-                var stat = stats[statChange.StatName];
+                var stat = FindStat(stats, statChange.StatName);
                 ApplyStatChange(stat, statChange);
             }
+        }
+
+        private static Stat FindStat(Stats stats, string statName)
+        {
+            return stats[statName];
         }
 
         private void ApplyStatChange(Stat stat, StatChange statChange)
@@ -38,7 +43,7 @@ namespace ChoiceSharp.Helpers
 
             if (statChange.ResultString != null)
             {
-                stat.ValueString = statChange.ResultString;
+                UpdateString(stat, statChange.ResultString);
             }
 
             if (statChange.ResultIntSet != null)
@@ -60,6 +65,16 @@ namespace ChoiceSharp.Helpers
             {
                 stat.Value = statChange.ResultObject;
             }
+        }
+
+        private static void UpdateString(Stat stat, string statChangeString)
+        {
+            stat.ValueString = statChangeString;
+        }
+
+        public void UpdateStatsFromInput(Stats stats, string targetStat, string input)
+        {
+            UpdateString(FindStat(stats, targetStat), input);
         }
     }
 }

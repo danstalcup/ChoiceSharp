@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ChoiceSharp.Core;
 using ChoiceSharp.Helpers;
 using ChoiceSharp.HeroLegacy.StatEntities;
@@ -14,10 +15,10 @@ namespace ChoiceSharp.HeroLegacy.Data
                 var result = new Stats();
                 var builder = new StatBuilder();
 
-                result.Add(builder.BuildStat(HlStats.FullName, HlStatCategory.Basic));
-                result.Add(builder.BuildStat(HlStats.Name, HlStatCategory.Basic));
-
-                result.Add(builder.BuildStat(HlStats.BackgroundRegion, HlStatCategory.Background));
+                foreach (var stat in HlStats.StatMapping)
+                {
+                    result.Add(builder.BuildStat(stat.Item1, stat.Item2, stat.Item3));
+                }
 
                 return result;
             }
@@ -33,6 +34,18 @@ namespace ChoiceSharp.HeroLegacy.Data
                 return story;
             }
         }
+
+        public static Reference Reference
+        {
+            get
+            {
+                var reference = new Reference();
+
+                // default entries go here
+
+                return reference;
+            }
+        }
     }
 
     public class HlStats
@@ -40,11 +53,32 @@ namespace ChoiceSharp.HeroLegacy.Data
         public const string FullName = "FullName";
         public const string Name = "Name";
         public const string BackgroundRegion = "BackgroundRegion";
+        public const string BackgroundWealth = "BackgroundWealth";
+        public const string BackgroundUnusual = "BackgroundUnusual";
+
+        public static (string, string, string)[] StatMapping => new[]
+        {
+            (FullName, HlStatCategory.Basic, HlStatDisplayName.FullName),
+            (Name, HlStatCategory.Basic, HlStatDisplayName.Name),
+            (BackgroundRegion, HlStatCategory.Background, HlStatDisplayName.BackgroundRegion),
+            (BackgroundWealth, HlStatCategory.Background, HlStatDisplayName.BackgroundWealth),
+            (BackgroundUnusual, HlStatCategory.Background, HlStatDisplayName.BackgroundUnusual),
+        };
+
     }
 
     public class HlStatCategory
     {
         public const string Basic = "Basic";
         public const string Background = "Background";
+    }
+
+    public class HlStatDisplayName
+    {
+        public const string FullName = "Full Name";
+        public const string Name = "Name";
+        public const string BackgroundRegion = "Background - Region";
+        public const string BackgroundWealth = "Background - Wealth";
+        public const string BackgroundUnusual = "Background - Unusual Trait";
     }
 }

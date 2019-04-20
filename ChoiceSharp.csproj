@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\DisplayConstants.cs" />
+    <Compile Include="Core\ReferenceEntry.cs" />
+    <Compile Include="Core\Reference.cs" />
     <Compile Include="Core\Stat.cs" />
     <Compile Include="Core\StatChange.cs" />
     <Compile Include="Core\Stats.cs" />
@@ -54,6 +56,8 @@
     <Compile Include="Helpers\ChoicePreparer.cs" />
     <Compile Include="Helpers\FairmathCalculator.cs" />
     <Compile Include="Helpers\NextStoryEventProcessor.cs" />
+    <Compile Include="Helpers\ReferenceEntryDescriptionProcessor.cs" />
+    <Compile Include="Helpers\ReferenceUpdater.cs" />
     <Compile Include="Helpers\StatBuilder.cs" />
     <Compile Include="Helpers\StatsUpdater.cs" />
     <Compile Include="Helpers\StoryDataLookup.cs" />

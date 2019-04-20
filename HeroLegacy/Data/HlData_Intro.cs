@@ -36,7 +36,8 @@ namespace ChoiceSharp.HeroLegacy.Data
             Id = Intro_2_Id,            
             RawText = @"<p>The Prince Charming-doppelganger introduces himself as a fifth-year student helping out with orientation. You're itching to go find your dorm and start exploring, but he hands you a small vellum pamphlet.</p>
                         <p>The cover of the booklet reads <i>Greenthorn Academy: Orientation Guide</i>. You flip it open.</p>",
-            RawChoices = Intro_2_Choices
+            RawChoices = Intro_2_Choices,
+            RawReferenceEntries = Intro_2_ReferenceEntries
         };
 
         public static List<Choice> Intro_2_Choices => new List<Choice>
@@ -81,6 +82,40 @@ namespace ChoiceSharp.HeroLegacy.Data
             }
         };
 
+        public static List<ReferenceEntry> Intro_2_ReferenceEntries => new List<ReferenceEntry>
+        {
+            new ReferenceEntry
+            {
+                Id = Intro_Reference_Id_1,
+                RawTitle = "Greenthorn Academy",
+                RawContents = @"<p>Greenthorn Academy is a small school for exceptionally qualified young adults to learn the skills to serve and protect Halia, or wherever their future path might wind. Greenthorn embraces students poor and rich from all over Halia.</p>
+                    <p>Located in the heart of Greenthorn Forest, dressed in the shadows of broadleaf trees, the academy was founded by current headmaster Sir Alton nearly fifty years ago. Sir Alton still serves as Greenthorn's chief recruiter, identifying and recruiting the most gifted youths across the land.</p>
+                    <p>Greenthorn Academy employs a vibrant and skilled staff with expertise in various areas of heroics. The instructors double as the caretakers and counselors of the students.</p>"
+            },
+            new ReferenceEntry
+            {
+                Id = Intro_Reference_Id_2,
+                RawTitle = "The local region",
+                RawContents = @"<p>The academy is a day's walk, or few hours horse ride, from three small trading towns: Ashton to the west, Belltip to the east, and Crowbrook to the north.</p>
+                    <p>To the southwest, a day's horse ride or several day hike away, is Dunnriver City, the capital of Halia.</p>
+                    <p>Halia has for centuries been a peaceful haven for humans. Rough soil but a temperate climate has encouraged free-flowing trade and a comfortable but humble lifestyle.</p>"
+            },
+            new ReferenceEntry
+            {
+                Id = Intro_Reference_Id_3,
+                RawTitle = "The school year",
+                RawContents = @"<p>Each year of training at Greenthorn is broken into four quarters to match the seasons: Fall, Winter, Spring, and Summer, each about three months long. At the end of each period are exams as well as a student Tournament.</p>
+                    <p>Each quarter spans twelve weeks, followed by a week of vacation from classes.</p>"
+            },
+            new ReferenceEntry
+            {
+                Id = Intro_Reference_Id_4,
+                RawTitle = "Tourneys",
+                RawContents = @"<p>qz Tourney info goes here</p>"
+            }
+        };
+
+
         public static StoryEvent Intro_3 => new StoryEvent
         {
             Id = Intro_3_Id,
@@ -95,5 +130,10 @@ namespace ChoiceSharp.HeroLegacy.Data
         public const string Intro_1_Id = "intro_1";
         public const string Intro_2_Id = "intro_2";
         public const string Intro_3_Id = "intro_3";
+
+        public const string Intro_Reference_Id_1 = "intro_reference_1";
+        public const string Intro_Reference_Id_2 = "intro_reference_2";
+        public const string Intro_Reference_Id_3 = "intro_reference_3";
+        public const string Intro_Reference_Id_4 = "intro_reference_4";
     }
 }

@@ -11,6 +11,10 @@ namespace ChoiceSharp.Constants
     {
         public const string BreakBetweenInfoBlocks = "<p>----------</p>";
 
+        public const string ReferenceItemCreatedSuffix = "was added to your Reference.";
+
+        public const string ReferenceItemUpdatedSuffix = "was updated in your Reference.";
+
         public static string DefaultButtonText(StoryEventType storyEventType)
         {
             switch (storyEventType)
